@@ -5,44 +5,63 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Scanner firstTriangleScanner = new Scanner(System.in);
+        Scanner secondTriangleScanner = new Scanner(System.in);
+        Scanner trianglePrismScanner = new Scanner(System.in);
         boolean programIsRunning = true;
         boolean triangularTypeChosen = true;
         boolean trapezoidalTypeChosen = true;
 
         while (programIsRunning) {
             MenuToDisplay.displayMainMenu();
-            int radix = scanner.nextInt();
+            int choseTypeOfTrench = scanner.nextInt();
 
-            switch (radix) {
+            switch (choseTypeOfTrench) {
                 case 1:
                     System.out.println("You have selected triangular type of trench");
                     while (triangularTypeChosen) {
-                        MenuToDisplay.displayMenuWithCalculatingMethods();
-                        int radixTriangularCalculatingMethods = scanner.nextInt();
+                        MenuToDisplay.DisplayMenuWithCalculatingMethodsForTriangularTrench();
+                        int choseTriangularCalculatingMethods = scanner.nextInt();
 
-                        switch (radixTriangularCalculatingMethods) {
+                        switch (choseTriangularCalculatingMethods) {
                             case 1:
                                 System.out.println("You have selected: Average cross - section method");
                                 System.out.println("Please set variables to calculate");
-                                System.out.println(" ");
-                                System.out.println("Beginning chainage of the trench");
-                                System.out.println("Closing chainage of the trench");
+                                System.out.println("----------------------------------------------------- ");
+                                System.out.println("Beginning chainage of the trench in meters and with '.'(dot)");
+                                String trianglePrismBeginningChainage = trianglePrismScanner.next();
+                                System.out.println("Closing chainage of the trench in meters and with '.'(dot)");
+                                String trianglePrismClosingChainage = trianglePrismScanner.next();
+                                TrianglePrism solution = new TrianglePrism(trianglePrismBeginningChainage, trianglePrismClosingChainage);
+                                System.out.println(solution.ConvertTrianglePrismStringChainageToFloatLength());
                                 System.out.println("First triangular cross - section variables");
                                 System.out.println("Bottom ordinate of first triangular cross - section");
-
+                                float firstTriangleBottomOrdinate1 = firstTriangleScanner.nextFloat();
                                 System.out.println("Top ordinate of first triangular cross - section (1)");
+                                float firstTriangleTopOrdinate1 = firstTriangleScanner.nextFloat();
                                 System.out.println("Top ordinate of first triangular cross - section (2)");
-                                System.out.println("Top width of first triangular cross - section");
+                                float firstTriangleTopOrdinate2 = firstTriangleScanner.nextFloat();
                                 System.out.println("Height of first triangular cross - section");
-                                System.out.println("Arm slope of first triangular cross - section(1)");
-                                System.out.println("Arm slope of first triangular cross - section(2)");
-                                System.out.println("Arm length of first triangular cross - section(1)");
-                                System.out.println("Arm length of first triangular cross - section(2)");
+                                float firstTriangleHeight = firstTriangleScanner.nextFloat();
+                                System.out.println("Top width of first triangular cross - section");
+                                float firstTriangleTopBase = firstTriangleScanner.nextFloat();
+                                FirstTriangle solution1 = new FirstTriangle(firstTriangleBottomOrdinate1, firstTriangleTopOrdinate1, firstTriangleTopOrdinate2, firstTriangleHeight, firstTriangleTopBase);
+                                System.out.println(solution1.SolveForFirstTriangle());
+                                System.out.println("Second triangular cross - section variables");
+                                System.out.println("Bottom ordinate of first triangular cross - section");
+                                float secondTriangleBottomOrdinate1 = secondTriangleScanner.nextFloat();
+                                System.out.println("Top ordinate of second triangular cross - section (1)");
+                                float secondTriangleTopOrdinate1 = secondTriangleScanner.nextFloat();
+                                System.out.println("Top ordinate of second triangular cross - section (2)");
+                                float secondTriangleTopOrdinate2 = secondTriangleScanner.nextFloat();
+                                System.out.println("Height of second triangular cross - section");
+                                float secondTriangleHeight = secondTriangleScanner.nextFloat();
+                                System.out.println("Top width of second triangular cross - section");
+                                float secondTriangleTopBase = secondTriangleScanner.nextFloat();
+                                SecondTriangle solution2 = new SecondTriangle(secondTriangleBottomOrdinate1, secondTriangleTopOrdinate1, secondTriangleTopOrdinate2, secondTriangleHeight, secondTriangleTopBase);
+                                System.out.println(solution2.SolveForSecondTriangle());
                                 break;
                             case 2:
-                                System.out.println("You have selected: Simpson method");
-                                break;
-                            case 3:
                                 System.out.println("You have selected: Medial cross - section method");
                                 break;
                             case 0:
@@ -58,7 +77,7 @@ public class Main {
                 case 2:
                     System.out.println("You have selected trapezoidal type of trench");
                     while (trapezoidalTypeChosen) {
-                        MenuToDisplay.displayMenuWithCalculatingMethods();
+                        MenuToDisplay.DisplayMenuWithCalculatingMethodsForTriangularTrench();
                         int radixTrapezoidalCalculatingMethods = scanner.nextInt();
 
                         switch (radixTrapezoidalCalculatingMethods) {
@@ -88,7 +107,6 @@ public class Main {
                     break;
             }
         }
-
 
 
     }
