@@ -7,7 +7,7 @@ public class CalculatingMethodsForTrianglePrism {
     public float AverageCrossSectionMethodForTrianglePrism() {
 
         float trianglePrismVolumeAverageCrossSectionMethod;
-        trianglePrismVolumeAverageCrossSectionMethod = (float) (0.5 * (dataFromFirstTriangleCalculation.SolveForFirstTriangle()) + dataFromSecondTriangleCalculation.SolveForSecondTriangle()) * dataLengthFromTrianglePrism.calculateLengthOfTrench();
+        trianglePrismVolumeAverageCrossSectionMethod = (float) (0.5 * (dataFromFirstTriangleCalculation.SolveForFirstTriangle()) + dataFromSecondTriangleCalculation.SolveForSecondTriangle()) * dataLengthFromTrianglePrism.CalculateLengthOfTrench();
 
         return trianglePrismVolumeAverageCrossSectionMethod;
     }

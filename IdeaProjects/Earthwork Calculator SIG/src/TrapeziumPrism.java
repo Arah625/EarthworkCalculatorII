@@ -24,10 +24,12 @@ public class TrapeziumPrism {
     private float medialTrapeziumTopOrdinate2;
     private float medialTrapeziumHeight;
 
-    private String replacedSumSignInTrapeziumPrismBeginningChainage = trapeziumPrismBeginningChainage.replace("+", "");
-    private String replacedSumSignInTrapeziumPrismClosingChainage = trapeziumPrismClosingChainage.replace("+", "");
-    private float convertedTrapeziumPrismStringBeginningChainageToFloat = Float.valueOf(replacedSumSignInTrapeziumPrismBeginningChainage);
-    private float convertedTrapeziumPrismStringClosingChainageToFloat = Float.valueOf(replacedSumSignInTrapeziumPrismClosingChainage);
+    private String replacedSumSignInTrapeziumPrismBeginningChainage;
+    private String replacedSumSignInTrapeziumPrismClosingChainage;
+    private float convertedTrapeziumPrismStringBeginningChainageToFloat;
+    private float convertedTrapeziumPrismStringClosingChainageToFloat;
+    private float trapeziumPrismLength;
+
 
     private float trapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod;
     private float trapeziumPrismVariableBForTopSurfaceAreaForSimpsonMethod;
@@ -40,10 +42,12 @@ public class TrapeziumPrism {
     private float trapeziumPrismHeightForSimpsonMethod;
 
 
-
     private float trapeziumPrismBottomSurfaceAreaForSimpsonMethod = trapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod * trapeziumPrismVariableDForBottomSurfaceAreaForSimpsonMethod;
     private float trapeziumPrismTopSurfaceAreaForSimpsonMethod = trapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod * trapeziumPrismVariableBForTopSurfaceAreaForSimpsonMethod;
     private float trapeziumPrismMiddleSurfaceAreaForSimpsonMethod = (trapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod * trapeziumPrismVariableCForBottomSurfaceAreaForSimpsonMethod) * (trapeziumPrismVariableBForTopSurfaceAreaForSimpsonMethod * trapeziumPrismVariableDForBottomSurfaceAreaForSimpsonMethod);
+
+
+
 
     public String getTrapeziumPrismBeginningChainage() {
         return trapeziumPrismBeginningChainage;
@@ -234,7 +238,8 @@ public class TrapeziumPrism {
     }
 
     public void setReplacedSumSignInTrapeziumPrismBeginningChainage(String replacedSumSignInTrapeziumPrismBeginningChainage) {
-        this.replacedSumSignInTrapeziumPrismBeginningChainage = replacedSumSignInTrapeziumPrismBeginningChainage;
+        this.replacedSumSignInTrapeziumPrismBeginningChainage = trapeziumPrismBeginningChainage.replace("+", "");
+        ;
     }
 
     public String getReplacedSumSignInTrapeziumPrismClosingChainage() {
@@ -242,7 +247,7 @@ public class TrapeziumPrism {
     }
 
     public void setReplacedSumSignInTrapeziumPrismClosingChainage(String replacedSumSignInTrapeziumPrismClosingChainage) {
-        this.replacedSumSignInTrapeziumPrismClosingChainage = replacedSumSignInTrapeziumPrismClosingChainage;
+        this.replacedSumSignInTrapeziumPrismClosingChainage = trapeziumPrismClosingChainage.replace("+", "");
     }
 
     public float getConvertedTrapeziumPrismStringBeginningChainageToFloat() {
@@ -250,7 +255,7 @@ public class TrapeziumPrism {
     }
 
     public void setConvertedTrapeziumPrismStringBeginningChainageToFloat(float convertedTrapeziumPrismStringBeginningChainageToFloat) {
-        this.convertedTrapeziumPrismStringBeginningChainageToFloat = convertedTrapeziumPrismStringBeginningChainageToFloat;
+        this.convertedTrapeziumPrismStringBeginningChainageToFloat = Float.valueOf(replacedSumSignInTrapeziumPrismBeginningChainage);
     }
 
     public float getConvertedTrapeziumPrismStringClosingChainageToFloat() {
@@ -258,7 +263,15 @@ public class TrapeziumPrism {
     }
 
     public void setConvertedTrapeziumPrismStringClosingChainageToFloat(float convertedTrapeziumPrismStringClosingChainageToFloat) {
-        this.convertedTrapeziumPrismStringClosingChainageToFloat = convertedTrapeziumPrismStringClosingChainageToFloat;
+        this.convertedTrapeziumPrismStringClosingChainageToFloat = Float.valueOf(replacedSumSignInTrapeziumPrismClosingChainage);
+    }
+
+    public float getTrapeziumPrismLength() {
+        return trapeziumPrismLength;
+    }
+
+    public void setTrapeziumPrismLength(float trapeziumPrismLength) {
+        this.trapeziumPrismLength = convertedTrapeziumPrismStringClosingChainageToFloat - convertedTrapeziumPrismStringBeginningChainageToFloat;
     }
 
     public float getTrapeziumPrismVariableAForTopSurfaceAreaForSimpsonMethod() {

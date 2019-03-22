@@ -17,13 +17,13 @@ public class TrianglePrism {
     private float medialTriangleTopOrdinate1;
     private float medialTriangleTopOrdinate2;
     private float medialTriangleHeight;
-    private String replacedSumSignInTrianglePrismBeginningChainage = trianglePrismBeginningChainage.replace("+", "");
-    private String replacedSumSignInTrianglePrismClosingChainage = trianglePrismClosingChainage.replace("+", "");
-    private float convertedTrianglePrismStringBeginningChainageToFloat = Float.valueOf(replacedSumSignInTrianglePrismBeginningChainage);
-    private float convertedTrianglePrismStringClosingChainageToFloat = Float.valueOf(replacedSumSignInTrianglePrismClosingChainage);
+    private String replacedSumSignInTrianglePrismBeginningChainage;
+    private String replacedSumSignInTrianglePrismClosingChainage;
+    private float convertedTrianglePrismStringBeginningChainageToFloat;
+    private float convertedTrianglePrismStringClosingChainageToFloat;
 
 
-    public float calculateLengthOfTrench() {
+    public float CalculateLengthOfTrench() {
 
         float solutionForTrenchLength;
 
@@ -173,7 +173,7 @@ public class TrianglePrism {
     }
 
     public void setReplacedSumSignInTrianglePrismBeginningChainage(String replacedSumSignInTrianglePrismBeginningChainage) {
-        this.replacedSumSignInTrianglePrismBeginningChainage = replacedSumSignInTrianglePrismBeginningChainage;
+        this.replacedSumSignInTrianglePrismBeginningChainage = getTrianglePrismBeginningChainage().replace("+", "");
     }
 
     public String getReplacedSumSignInTrianglePrismClosingChainage() {
@@ -181,7 +181,7 @@ public class TrianglePrism {
     }
 
     public void setReplacedSumSignInTrianglePrismClosingChainage(String replacedSumSignInTrianglePrismClosingChainage) {
-        this.replacedSumSignInTrianglePrismClosingChainage = replacedSumSignInTrianglePrismClosingChainage;
+        this.replacedSumSignInTrianglePrismClosingChainage = getTrianglePrismClosingChainage().replace("+", "");
     }
 
     public float getConvertedTrianglePrismStringBeginningChainageToFloat() {
@@ -189,7 +189,7 @@ public class TrianglePrism {
     }
 
     public void setConvertedTrianglePrismStringBeginningChainageToFloat(float convertedTrianglePrismStringBeginningChainageToFloat) {
-        this.convertedTrianglePrismStringBeginningChainageToFloat = convertedTrianglePrismStringBeginningChainageToFloat;
+        this.convertedTrianglePrismStringBeginningChainageToFloat = Float.valueOf(getReplacedSumSignInTrianglePrismBeginningChainage());
     }
 
     public float getConvertedTrianglePrismStringClosingChainageToFloat() {
@@ -197,7 +197,8 @@ public class TrianglePrism {
     }
 
     public void setConvertedTrianglePrismStringClosingChainageToFloat(float convertedTrianglePrismStringClosingChainageToFloat) {
-        this.convertedTrianglePrismStringClosingChainageToFloat = convertedTrianglePrismStringClosingChainageToFloat;
+        this.convertedTrianglePrismStringClosingChainageToFloat = Float.valueOf(getReplacedSumSignInTrianglePrismClosingChainage());
     }
+
 
 }

@@ -9,7 +9,10 @@ public class Main {
         boolean trapezoidalTypeChosen = true;
         TrianglePrism dataInputForTriangleFromUser = new TrianglePrism();
         TrapeziumPrism dataInputForTrapeziumFromUser = new TrapeziumPrism();
+        TrianglePrism lengthOfTheTrench = new TrianglePrism();
         CalculatingMethodsForTrianglePrism solutionForTrianglePrism = new CalculatingMethodsForTrianglePrism();
+
+
 
         while (programIsRunning) {
             MenuToDisplay.DisplayMainMenu();
@@ -31,7 +34,7 @@ public class Main {
                                 dataInputForTriangleFromUser.setTrianglePrismBeginningChainage(scanner.next());
                                 System.out.println("Closing chainage of the trench in meters and with '.'(dot)");
                                 dataInputForTriangleFromUser.setTrianglePrismClosingChainage(scanner.next());
-                                System.out.println("Length of the trench from set chainage: ");
+                                System.out.println("Length of the trench from set chainage: " + lengthOfTheTrench.CalculateLengthOfTrench() + "m");
                                 System.out.println("First triangular cross - section variables");
                                 System.out.println("Bottom ordinate of first triangular cross - section");
                                 dataInputForTriangleFromUser.setFirstTriangleBottomOrdinate1(scanner.nextFloat());
@@ -75,7 +78,7 @@ public class Main {
                                 dataInputForTriangleFromUser.setMedialTriangleHeight(scanner.nextFloat());
                                 System.out.println("Top width of medial triangular cross - section");
                                 dataInputForTriangleFromUser.setMedialTriangleTopBase(scanner.nextFloat());
-                                System.out.println("Volume of earthwork: " + solutionForTrianglePrism.MedialCrossSectionMethodForTrianglePrism() + "m3");
+                            //    System.out.println("Volume of earthwork: " + solutionForTrianglePrism.MedialCrossSectionMethodForTrianglePrism() + "m3");
                                 break;
                             case 0:
                                 System.out.println("You have selected: Get back to trench type selection");
@@ -133,7 +136,7 @@ public class Main {
                                 dataInputForTrapeziumFromUser.setSecondTrapeziumTopBase(scanner.nextFloat());
                                 System.out.println("Bottom width of second trapezoidal cross - section");
                                 dataInputForTrapeziumFromUser.setSecondTrapeziumBottomBase(scanner.nextFloat());
-                                System.out.println("Volume of earthwork: " + solutionForTrapeziumPrism.AverageCrossSectionMethodForTrapeziumPrism() + "m3");
+                            //    System.out.println("Volume of earthwork: " + solutionForTrapeziumPrism.AverageCrossSectionMethodForTrapeziumPrism() + "m3");
                                 break;
                             case 2:
                                 System.out.println("You have selected: Medial cross - section method");
@@ -154,7 +157,7 @@ public class Main {
                                 dataInputForTrapeziumFromUser.setMedialTrapeziumTopBase(scanner.nextFloat());
                                 System.out.println("Bottom width of medial trapezoidal cross - section");
                                 dataInputForTrapeziumFromUser.setMedialTrapeziumBottomBase(scanner.nextFloat());
-                                System.out.println("Volume of earthwork: " + solutionForTrapeziumPrism.AverageCrossSectionMethodForTrapeziumPrism() + "m3");
+                           //     System.out.println("Volume of earthwork: " + solutionForTrapeziumPrism.AverageCrossSectionMethodForTrapeziumPrism() + "m3");
                                 break;
                             case 3:
                                 System.out.println("You have selected: Simpson method");
@@ -179,7 +182,7 @@ public class Main {
                                 dataInputForTrapeziumFromUser.setTrapeziumPrismTopOrdinate2ForSimpsonMethod(scanner.nextFloat());
                                 System.out.println("Height of the trench");
                                 dataInputForTrapeziumFromUser.setTrapeziumPrismHeightForSimpsonMethod(scanner.nextFloat());
-                                System.out.println("Volume of earthwork: " + solutionForTrapeziumPrism.AverageCrossSectionMethodForTrapeziumPrism() + "m3");
+                        //        System.out.println("Volume of earthwork: " + solutionForTrapeziumPrism.AverageCrossSectionMethodForTrapeziumPrism() + "m3");
                                 break;
                             case 0:
                                 System.out.println("You have selected: Get back to trench type selection");
