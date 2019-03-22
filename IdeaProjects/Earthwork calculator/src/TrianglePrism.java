@@ -1,7 +1,11 @@
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 public class TrianglePrism {
 
     private String trianglePrismBeginningChainage;
     private String trianglePrismClosingChainage;
+
 
     private float convertedTrianglePrismStringBeginningChainageToFloat = Float.parseFloat(trianglePrismBeginningChainage);
     private float convertedTrianglePrismStringClosingChainageToFloat = Float.parseFloat(trianglePrismClosingChainage);
@@ -18,7 +22,6 @@ public class TrianglePrism {
 
 
         String solutionTrianglePrismStringChainageToFloatLength = " ";
-
 
         solutionTrianglePrismStringChainageToFloatLength = "Length on the trench is: " + (convertedTrianglePrismStringClosingChainageToFloat - convertedTrianglePrismStringBeginningChainageToFloat) + "m";
 

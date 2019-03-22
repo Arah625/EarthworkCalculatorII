@@ -22,14 +22,15 @@ public class FirstTriangle {
         float firstTriangleHeightFromOrdinates;
         float firstTriangleAreaFromOrdinatesDifference;
 
-            if (firstTriangleHeight <= 0) {
-                firstTriangleHeightFromOrdinates = (((firstTriangleTopOrdinate1 + firstTriangleTopOrdinate2) / 2) - firstTriangleBottomOrdinate1);
-                firstTriangleAreaFromOrdinatesDifference = firstTriangleTopBase * firstTriangleHeightFromOrdinates / 2;
-                solutionForFirstTriangle = "Area for first Triangle cross - section = " + firstTriangleAreaFromOrdinatesDifference;
-            } else {
-                float firstTriangleArea = firstTriangleTopBase * firstTriangleHeight / 2;
-                solutionForFirstTriangle = "Area for first Triangle cross - section = " + firstTriangleArea;
-            } return solutionForFirstTriangle;
+        if (firstTriangleHeight <= 0) {
+            firstTriangleHeightFromOrdinates = (((firstTriangleTopOrdinate1 + firstTriangleTopOrdinate2) / 2) - firstTriangleBottomOrdinate1);
+            firstTriangleAreaFromOrdinatesDifference = firstTriangleTopBase * firstTriangleHeightFromOrdinates / 2;
+            solutionForFirstTriangle = "Area for first Triangle cross - section = " + firstTriangleAreaFromOrdinatesDifference;
+        } else {
+            float firstTriangleArea = firstTriangleTopBase * firstTriangleHeight / 2;
+            solutionForFirstTriangle = "Area for first Triangle cross - section = " + firstTriangleArea;
+        }
+        return solutionForFirstTriangle;
 
 
     }
